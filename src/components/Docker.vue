@@ -39,12 +39,11 @@ export default {
   box-sizing: border-box;
   padding: 0 0.18rem;
   display: flex;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   height: 0.49rem;
-  border-top: 0.01rem solid $content-bgColor;
   &__item {
     flex: 1;
     text-align: center;
@@ -58,7 +57,7 @@ export default {
     }
     &--active {
       a {
-        color: #1fa4fc;
+        color: #72a759;
       }
     }
   }

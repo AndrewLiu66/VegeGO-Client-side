@@ -47,10 +47,10 @@ export default {
 @import "../../style/mixins.scss";
 .nearby {
   &__title {
-    margin: 0.16rem 0 0.02rem 0;
+    margin: 0.05rem 0 0.02rem 0;
     font-size: 0.18rem;
     font-weight: normal;
-    color: $content-fontcolor;
+    color: #72a759;
   }
   a {
     text-decoration: none;
