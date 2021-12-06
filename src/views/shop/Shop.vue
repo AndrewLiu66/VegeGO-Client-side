@@ -34,8 +34,8 @@ const useShopInfoEffect = () => {
   const getItemData = async () => {
     const result = await get(`/api/shop/${route.params.id}`);
     // console.log("test for result", result);
-    if (result?.errno === 0 && result?.result) {
-      data.item = result.result;
+    if (result?.errno === 0 && result?.data) {
+      data.item = result.data;
     }
   };
   const { item } = toRefs(data);

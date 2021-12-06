@@ -24,6 +24,7 @@ const useNearbyListEffect = () => {
   const getNearbyList = async () => {
     const result = await get("/api/shop/hot-list");
     //?.的作用跟.差不多,但是如果没有errono系统不会报错;result?.data?.length表示data里面有数据
+    console.log(123, result);
     if (result?.errno === 0 && result?.data?.length) {
       nearbyList.value = result.data;
     }
