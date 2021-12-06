@@ -9,10 +9,26 @@
     <span class="search__text">Search an item</span>
   </div>
   <div class="banner">
-    <img
-      class="banner__img"
-      src="http://www.dell-lee.com/imgs/vue3/banner.jpg"
-    />
+    <n-config-provider :theme-overrides="themeOverrides">
+      <n-carousel class="n-carousel .n-carousel__dots">
+        <img
+          class="carousel-img"
+          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
+        />
+        <img
+          class="carousel-img"
+          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
+        />
+        <img
+          class="carousel-img"
+          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
+        />
+        <img
+          class="carousel-img"
+          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
+        />
+      </n-carousel>
+    </n-config-provider>
   </div>
   <div class="icons">
     <div class="icons__item" v-for="item in iconsList" :key="item.desc">
@@ -23,13 +39,27 @@
       <p class="icons__item__desc">{{ item.desc }}</p>
     </div>
   </div>
-  <div class="gap"></div>
 </template>
 
 <script>
+import { defineComponent, components } from "vue";
+import { NCarousel } from "naive-ui";
+import { NConfigProvider } from "naive-ui";
+
 export default {
   name: "StaticPart",
+  components: {
+    NCarousel,
+    NConfigProvider,
+  },
   setup() {
+    const themeOverrides = {
+      Carousel: {
+        dotSize: "10px",
+      },
+      // ...
+    };
+
     const iconsList = [
       { imgName: "超市", desc: "Grocery" },
       { imgName: "菜市场", desc: "Vegetable" },
@@ -42,7 +72,7 @@ export default {
       { imgName: "大牌免运", desc: "Drink" },
       { imgName: "红包", desc: "Meat" },
     ];
-    return { iconsList };
+    return { iconsList, themeOverrides };
   },
 };
 </script>
@@ -50,6 +80,17 @@ export default {
 <style lang='scss' scoped>
 @import "../../style/variables.scss";
 @import "../../style/mixins.scss";
+
+.n-carousel {
+  border-radius: 5px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+}
+
 .position {
   color: $content-fontcolor;
 
@@ -115,10 +156,5 @@ export default {
   &__img {
     width: 100%;
   }
-}
-.gap {
-  margin: 0 -0.18rem;
-  height: 0.1rem;
-  background: $content-bgColor;
 }
 </style>
