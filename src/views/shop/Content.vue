@@ -16,7 +16,6 @@
     </div>
 
     <!-- display all products within a shop -->
-    <!-- <div>{{ list }}</div> -->
     <div class="product">
       <div class="product__item" v-for="item in list" :key="item._id">
         <img class="product__item__img" :src="item.imgUrl" />
@@ -71,7 +70,7 @@ const categories = [
 const useTabEffect = () => {
   const currentTab = ref(categories[0].tab);
 
-  // 点击左边的tab返回相应的列表商品
+  // set current tab = tab that user clicks
   const handleTabClick = (tab) => {
     currentTab.value = tab;
   };
@@ -83,12 +82,12 @@ const useCurrentListEffect = (currentTab, shopId) => {
   // tab代表了分类页左边的分类
   const getContentData = async () => {
     // 由于tab传入的是一个reactive数据，因此要用currentTab.value才能够获取到相应的数据
-    // console.log("test for id", shopId);
-    // console.log("test for tab", currentTab.value);
 
     const result = await get(`/api/shop/${shopId}/products`, {
       tab: currentTab.value,
     });
+
+    console.log("test shop product for", currentTab, " ", result.data);
     if (result?.errno === 0 && result?.data?.length) {
       content.list = result.data;
     }
@@ -118,6 +117,7 @@ const useCartEffect = () => {
   };
   return { cartList, changeCartItem, getProductCartCount };
 };
+
 export default {
   name: "Content",
   props: ["shopName"],

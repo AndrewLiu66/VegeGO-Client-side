@@ -12,7 +12,7 @@
     v-show="showConfirm"
     @click="() => handleShowConfirmChange(false)"
   >
-    <!-- @click.stop使得你点击中间的确认框的时候不会退出蒙层，防止冒泡 -->
+    <!-- @click.stop once you click the confirm button, you won't exit grey cover -->
     <div class="mask__content" @click.stop>
       <h3 class="mask__content__title">Are you sure to place the order？</h3>
       <p class="mask__content__desc">Order will be canceled in 15 minutes</p>
@@ -51,6 +51,7 @@ const useMakeOrderEffect = (shopId, shopName, productList) => {
       // parseInt将文字转化为数字
       products.push({ id: parseInt(product._id, 10), num: product.count });
     }
+    // console.log("cancel status", isCanceled);
     try {
       const result = await post("/api/order", {
         addressId: 1,
@@ -59,6 +60,7 @@ const useMakeOrderEffect = (shopId, shopName, productList) => {
         isCanceled,
         products,
       });
+      console.log("place order status", result);
       if (result?.errno === 0) {
         store.commit("clearCartData", shopId);
         router.push({ name: "OrderList" });

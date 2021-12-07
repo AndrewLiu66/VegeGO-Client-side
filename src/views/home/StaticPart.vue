@@ -8,28 +8,26 @@
     <span class="iconfont">&#xe62d;</span>
     <span class="search__text">Search an item</span>
   </div>
-  <div class="banner">
-    <n-config-provider :theme-overrides="themeOverrides">
-      <n-carousel class="n-carousel .n-carousel__dots">
-        <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
-        />
-        <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
-        />
-        <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
-        />
-        <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
-        />
-      </n-carousel>
-    </n-config-provider>
-  </div>
+  <n-config-provider :theme-overrides="themeOverrides">
+    <n-carousel class="n-carousel .n-carousel__dots">
+      <img
+        class="carousel-img"
+        src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
+      />
+      <img
+        class="carousel-img"
+        src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
+      />
+      <img
+        class="carousel-img"
+        src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
+      />
+      <img
+        class="carousel-img"
+        src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
+      />
+    </n-carousel>
+  </n-config-provider>
   <div class="icons">
     <div class="icons__item">
       <img class="icons__item__img" :src="ImgList.Vegetable" />
@@ -130,7 +128,7 @@ export default {
 
 .carousel-img {
   width: 100%;
-  height: 80px;
+  height: 120px;
   object-fit: cover;
 }
 
@@ -191,14 +189,6 @@ export default {
       text-align: center;
       color: $content-fontcolor;
     }
-  }
-}
-.banner {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 25.4%;
-  &__img {
-    width: 100%;
   }
 }
 </style>

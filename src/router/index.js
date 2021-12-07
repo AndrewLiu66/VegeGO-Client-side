@@ -9,7 +9,11 @@ const routes = [
   }, {
     path: '/cartList',
     name: 'CartList',
-    component: () => import(/* webpackChunkName: "cartList" */ '../views/cartList/CartList')
+    component: () => import(/* webpackChunkName: "cartList" */ '../views/cartList/CartList.vue')
+  }, {
+    path: '/order',
+    name: 'Order',
+    component: () => import(/* webpackChunkName: "order" */ '../views/orderConfirmation/Order.vue')
   }, {
     path: '/orderConfirmation/:id',
     name: 'OrderConfirmation',
@@ -52,6 +56,7 @@ const router = createRouter({
 // from: current route being navigated away from
 router.beforeEach((to, from, next) => {
   const { isLogin } = localStorage;
+  // if not login, and the destination page is neither Login page or Register page
   (!isLogin && (to.name !== 'Login' && to.name !== 'Register')) ? next({ name: 'Login' }) : next()
 })
 export default router

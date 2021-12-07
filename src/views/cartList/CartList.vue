@@ -1,9 +1,12 @@
 <template>
-cartlist
+  <ProductList />
 </template>
 
-<script> 
+<script>
+import ProductList from "../orderConfirmation/ProductList.vue";
+
 export default {
-    name: 'CartList'
-}
+  name: "CartList",
+  components: { ProductList },
+};
 </script>

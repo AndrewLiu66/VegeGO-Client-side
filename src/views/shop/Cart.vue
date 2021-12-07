@@ -144,7 +144,6 @@ const useCartEffect = (shopId) => {
       shopId,
     });
   };
-  console.log("test for productList", productList);
   return {
     calculations,
     cartList,
