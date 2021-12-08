@@ -25,7 +25,7 @@ export default {
       { icon: "&#xe6f3;", text: "Home", to: { name: "Home" } },
       { icon: "&#xe7e5;", text: "Cart", to: { name: "CartList" } },
       { icon: "&#xe61e;", text: "Order", to: { name: "OrderList" } },
-      { icon: "&#xe660;", text: "Me", to: { name: "Home" } },
+      { icon: "&#xe660;", text: "Me", to: { name: "PersonalInfo" } },
     ];
     return { dockerList };
   },

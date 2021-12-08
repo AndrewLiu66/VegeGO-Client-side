@@ -87,7 +87,6 @@ const useCurrentListEffect = (currentTab, shopId) => {
       tab: currentTab.value,
     });
 
-    console.log("test shop product for", currentTab, " ", result.data);
     if (result?.errno === 0 && result?.data?.length) {
       content.list = result.data;
     }

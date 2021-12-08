@@ -1,7 +1,8 @@
 <template>
   <div class="position">
     <span class="iconfont position__icon">&#xe619;</span>
-    4041 Roosevelt Way NE, Seatte, WA
+    <!-- {{ addressList.value[0].city }}{{ addressList.value[0].department
+    }}{{ addressList.value[0].houseNumber }} -->
     <span class="iconfont position__notice">&#xe60b;</span>
   </div>
   <div class="search">
@@ -76,6 +77,9 @@ import eggImg from "../../assets/egg.png";
 import ice_creamImg from "../../assets/ice_cream.png";
 import SeasoningImg from "../../assets/Seasoning.jpeg";
 import SnackImg from "../../assets/snack.png";
+import { toRefs } from "vue";
+import { useStore } from "vuex";
+import useCommonAddressEffect from "../../effects/addressEffect";
 
 export default {
   name: "StaticPart",
@@ -112,8 +116,13 @@ export default {
       { imgName: "Snacks", desc: "Bakery" },
       { imgName: "Eggs", desc: "Promotion" },
     ];
-
-    return { iconsList, themeOverrides, ImgList };
+    // fetch current address
+    const { getAddressList } = useCommonAddressEffect();
+    getAddressList(true);
+    const store = useStore();
+    let { addressList } = toRefs(store.state);
+    console.log(addressList);
+    return { addressList, iconsList, themeOverrides, ImgList };
   },
 };
 </script>

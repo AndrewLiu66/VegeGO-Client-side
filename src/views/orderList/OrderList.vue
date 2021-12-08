@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="title">My Order</div>
+    <div class="title">我的订单</div>
     <div class="orders">
       <div class="order" v-for="(item, index) in list" :key="index">
         <div class="order__title">
@@ -16,15 +16,18 @@
               :key="innerIndex"
             >
               <img
-                :src="innerItem.product.img"
                 class="order__content__img"
+                :src="innerItem.product.imgUrl"
                 v-if="innerIndex <= 3"
               />
+              <!-- :src="innerItem.product.img"需要替换成:src="innerItem.product.imgUrl"才显示图片 -->
             </template>
           </div>
           <div class="order__content__info">
             <div class="order__content__price">¥ {{ item.totalPrice }}</div>
-            <div class="order__content__count">共{{ item.totalNumber }}件</div>
+            <div class="order__content__count">
+              共 {{ item.totalNumber }} 件
+            </div>
           </div>
         </div>
       </div>
@@ -37,6 +40,7 @@
 import { reactive, toRefs } from "vue";
 import { get } from "../../utils/request";
 import Docker from "../../components/Docker";
+
 // 处理订单列表逻辑
 const useOrderListEffect = () => {
   const data = reactive({ list: [] });
@@ -50,7 +54,8 @@ const useOrderListEffect = () => {
         let totalNumber = 0;
         products.forEach((productItem) => {
           totalNumber += productItem?.orderSales || 0;
-          totalPrice += productItem?.product?.price * productItem?.orderSales;
+          totalPrice +=
+            productItem?.product?.price * productItem?.orderSales || 0;
         });
         order.totalPrice = totalPrice;
         order.totalNumber = totalNumber;
@@ -66,7 +71,7 @@ const useOrderListEffect = () => {
 export default {
   name: "OrderList",
   components: { Docker },
-  setup(props) {
+  setup() {
     const { list } = useOrderListEffect();
     return { list };
   },
@@ -78,39 +83,37 @@ export default {
 .wrapper {
   overflow-y: auto;
   position: absolute;
-  right: 0;
   left: 0;
   top: 0;
   bottom: 0.5rem;
-  background: rgb(248, 248, 248);
+  right: 0;
+  background: $dark-bgColor;
 }
 .title {
   line-height: 0.44rem;
-  background: #fff;
+  background: $bgColor;
   font-size: 0.16rem;
-  color: #333;
+  color: $content-fontcolor;
   text-align: center;
 }
-.orders {
-}
 .order {
-  margin: 0.16rem, 0.18rem;
+  margin: 0.16rem 0.18rem;
   padding: 0.16rem;
-  background: #fff;
+  background: $bgColor;
   &__title {
     margin-bottom: 0.16rem;
     line-height: 0.22rem;
     font-size: 0.16rem;
-    color: #333333;
+    color: $content-fontcolor;
   }
   &__status {
     float: right;
     font-size: 0.14rem;
-    color: #999999;
+    color: $light-fontColor;
   }
   &__content {
     display: flex;
-    &_imgs {
+    &__imgs {
       flex: 1;
     }
     &__img {
@@ -119,7 +122,6 @@ export default {
       margin-right: 0.12rem;
     }
     &__info {
-      flex: 1;
       width: 0.7rem;
     }
     &__price {

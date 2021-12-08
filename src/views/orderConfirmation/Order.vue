@@ -38,29 +38,30 @@
 import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
-import { post } from "../../utils/request";
+import { post, get } from "../../utils/request";
 import { useCommonCartEffect } from "../../effects/cartEffects";
+import useAddressEffect from "./addressEffect";
 
-const useMakeOrderEffect = (shopId, shopName, productList) => {
-  const store = useStore();
+const useMakeOrderEffect = (shopId, shopName, productList, address) => {
   const router = useRouter();
+  const store = useStore();
+
   const handleConfirmOrder = async (isCanceled) => {
     const products = [];
     for (let i in productList.value) {
       const product = productList.value[i];
-      // parseInt将文字转化为数字
-      products.push({ id: parseInt(product._id, 10), num: product.count });
+      products.push({ id: product._id, num: product.count });
     }
-    // console.log("cancel status", isCanceled);
+    console.log(address.value._id);
     try {
       const result = await post("/api/order", {
-        addressId: 1,
+        addressId: address.value._id,
         shopId,
         shopName: shopName.value,
         isCanceled,
         products,
       });
-      console.log("place order status", result);
+      console.log(result);
       if (result?.errno === 0) {
         store.commit("clearCartData", shopId);
         router.push({ name: "OrderList" });
@@ -87,19 +88,18 @@ export default {
   setup() {
     const route = useRoute();
     const shopId = route.params.id;
+    const address = useAddressEffect();
+    console.log("address", address);
     const { calculations, shopName, productList } = useCommonCartEffect(shopId);
     const { handleConfirmOrder } = useMakeOrderEffect(
       shopId,
       shopName,
-      productList
+      productList,
+      address
     );
     const { showConfirm, handleShowConfirmChange } = useShowMaskEffect();
-
-    const handleCancelOrder = () => {
-      alert("cancel");
-    };
-
     return {
+      address,
       showConfirm,
       handleShowConfirmChange,
       calculations,
