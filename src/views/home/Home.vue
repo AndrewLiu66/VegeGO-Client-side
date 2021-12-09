@@ -1,6 +1,7 @@
 <template>
   <div class="header">
     <div class="title">VegeGO</div>
+    <img src="../../assets/icon/share.png" alt="" class="header__img" />
   </div>
   <div class="wrapper">
     <StaticPart />
@@ -19,19 +20,28 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.home {
+  background: #fff;
+}
 .header {
-  background: #72a759;
+  background: #558f3a;
   height: 0.65rem;
   width: 100%;
   position: fixed;
   z-index: 1000;
   .title {
     position: absolute;
-    top: 0.25rem;
+    top: 0.2rem;
     left: 0.2rem;
     font-size: 0.22rem;
     color: white;
     letter-spacing: 0.005rem;
+  }
+  &__img {
+    float: right;
+    margin-right: 0.3rem;
+    margin-top: 0.2rem;
+    width: 0.3rem;
   }
 }
 .wrapper {

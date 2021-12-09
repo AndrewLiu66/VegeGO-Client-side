@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="title">我的订单</div>
+    <div class="title">My Order</div>
     <div class="orders">
       <div class="order" v-for="(item, index) in list" :key="index">
         <div class="order__title">

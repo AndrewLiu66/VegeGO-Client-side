@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <div class="title">我的全部购物车</div>
+    <div class="title">My Cart</div>
     <div class="shops">
       <div class="empty" v-if="Object.keys(cartListWithProducts).length === 0">
-        购物车当前为空
+        The cart is empty.
       </div>
       <div
         class="shop"

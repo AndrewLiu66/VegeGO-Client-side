@@ -5,10 +5,7 @@
         <div class="header__info__user">{{ userInfo.username }}</div>
         <div class="header__info__id">ID:{{ userInfo._id }}</div>
       </div>
-      <img
-        class="header__avatar"
-        src="http://www.dell-lee.com/imgs/avatar.jpg"
-      />
+      <img class="header__avatar" src="../../assets/icon/avata.png" />
     </div>
     <div class="list">
       <div class="list__item" @click="handleAddressClick">
@@ -75,11 +72,11 @@ export default {
 .header {
   position: relative;
   height: 1.5rem;
-  background-image: linear-gradient(239deg, #3a6ff3 0%, #50c7fb 100%);
-  padding-top: 0.4rem;
+  background-image: linear-gradient(239deg, #abd392 0%, #50c7fb 100%);
+  padding-top: 0.3rem;
   &__info {
-    margin: 0.3rem 0.18rem 0 0.18rem;
-    padding-top: 0.46rem;
+    margin: 0.7rem 0.18rem 0 0.18rem;
+    padding: 0.65rem 0 0.3rem 0;
     height: 0.66rem;
     background: #fff;
     border-radius: 0.08rem;
@@ -99,15 +96,15 @@ export default {
   &__avatar {
     position: absolute;
     left: 50%;
-    top: 0.2rem;
+    top: 0.35rem;
     transform: translateX(-50%);
-    width: 0.94rem;
-    height: 0.94rem;
+    width: 1.2rem;
+    height: 1.2rem;
     border-radius: 50%;
   }
 }
 .list {
-  margin: 0.16rem 0.18rem 0 0.18rem;
+  margin: 1rem 0.18rem 0 0.18rem;
   background: $bgColor;
   box-shadow: 0 0.08rem 0.16rem 0 rgba(0, 0, 0, 0.08);
   border-radius: 0.08rem;

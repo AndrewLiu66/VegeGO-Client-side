@@ -3,7 +3,7 @@
     <div class="title">
       <div class="iconfont title__back" @click="handleBackClick">&#xe6f2;</div>
       <div class="title__text">My Address</div>
-      <div class="title__add" @click="handleAddClick">新建</div>
+      <div class="title__add" @click="handleAddClick">create</div>
     </div>
     <Address
       v-for="address in addressList"
@@ -72,6 +72,7 @@ export default {
   }
   &__text {
     flex: 1;
+    color: #fff;
     text-align: center;
   }
   &__add {

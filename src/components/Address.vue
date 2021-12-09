@@ -5,7 +5,8 @@
       <div class="address__info__phone">{{ address.phone }}</div>
     </div>
     <div class="address__detail">
-      {{ address.city }}{{ address.department }}{{ address.houseNumber }}
+      {{ address.city }} {{ address.department }} Unit:
+      {{ address.houseNumber }}
     </div>
     <div class="iconfont address__icon">&#xe6f2;</div>
   </div>
@@ -24,6 +25,7 @@ export default {
   position: relative;
   margin: 0.16rem 0.18rem 0 0.18rem;
   padding: 0.18rem 0.64rem 0.18rem 0.16rem;
+  box-shadow: 0 0.1rem 0.16rem 0 rgba(0, 0, 0, 0.04);
   background: #fff;
   border-radius: 0.04rem;
   &__info {

@@ -1,8 +1,8 @@
 <template>
   <div class="position">
     <span class="iconfont position__icon">&#xe619;</span>
-    <!-- {{ addressList.value[0].city }}{{ addressList.value[0].department
-    }}{{ addressList.value[0].houseNumber }} -->
+    {{ addressList[0]?.city }} {{ addressList[0]?.department }} Room:
+    {{ addressList[0]?.houseNumber }}
     <span class="iconfont position__notice">&#xe60b;</span>
   </div>
   <div class="search">
@@ -30,37 +30,9 @@
     </n-carousel>
   </n-config-provider>
   <div class="icons">
-    <div class="icons__item">
-      <img class="icons__item__img" :src="ImgList.Vegetable" />
-      <p class="icons__item__desc">Vegetables</p>
-    </div>
-    <div class="icons__item">
-      <img class="icons__item__img" :src="ImgList.Fruit" />
-      <p class="icons__item__desc">Fruit</p>
-    </div>
-    <div class="icons__item">
-      <img class="icons__item__img" :src="ImgList.Drink" />
-      <p class="icons__item__desc">Drink</p>
-    </div>
-    <div class="icons__item">
-      <img class="icons__item__img" :src="ImgList.Bread" />
-      <p class="icons__item__desc">Bread</p>
-    </div>
-    <div class="icons__item">
-      <img class="icons__item__img" :src="ImgList.Seasoning" />
-      <p class="icons__item__desc">Seasoning</p>
-    </div>
-    <div class="icons__item">
-      <img class="icons__item__img" :src="ImgList.Frozen" />
-      <p class="icons__item__desc">Frozen</p>
-    </div>
-    <div class="icons__item">
-      <img class="icons__item__img" :src="ImgList.Snacks" />
-      <p class="icons__item__desc">Snacks</p>
-    </div>
-    <div class="icons__item">
-      <img class="icons__item__img" :src="ImgList.Egg" />
-      <p class="icons__item__desc">Egg</p>
+    <div class="icons__item" v-for="(item, index) in iconsList" :key="index">
+      <img class="icons__item__img" :src="item.img" />
+      <p class="icons__item__desc">{{ item.imgName }}</p>
     </div>
   </div>
 </template>
@@ -95,34 +67,24 @@ export default {
       // ...
     };
 
-    const ImgList = {
-      Vegetable: vegeImg,
-      Fruit: fruitImg,
-      Drink: drinkImg,
-      Bread: breadImg,
-      Seasoning: SeasoningImg,
-      Frozen: ice_creamImg,
-      Snacks: SnackImg,
-      Egg: eggImg,
-    };
-
     const iconsList = [
-      { imgName: "Vegetable", desc: "Grocery" },
-      { imgName: "Fruit", desc: "Vegetable" },
-      { imgName: "Drink", desc: "Fruit" },
-      { imgName: "Bread", desc: "Plants" },
-      { imgName: "Seasoning", desc: "Health" },
-      { imgName: "Frozen", desc: "Household" },
-      { imgName: "Snacks", desc: "Bakery" },
-      { imgName: "Eggs", desc: "Promotion" },
+      { imgName: "Vegetable", img: vegeImg },
+      { imgName: "Fruit", img: fruitImg },
+      { imgName: "Drink", img: drinkImg },
+      { imgName: "Bread", img: breadImg },
+      { imgName: "Seasoning", img: SeasoningImg },
+      { imgName: "Frozen", img: ice_creamImg },
+      { imgName: "Snacks", img: SnackImg },
+      { imgName: "Eggs", img: eggImg },
     ];
+
     // fetch current address
     const { getAddressList } = useCommonAddressEffect();
     getAddressList(true);
     const store = useStore();
     let { addressList } = toRefs(store.state);
-    console.log(addressList);
-    return { addressList, iconsList, themeOverrides, ImgList };
+
+    return { addressList, iconsList, themeOverrides };
   },
 };
 </script>
