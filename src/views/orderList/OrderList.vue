@@ -6,7 +6,7 @@
         <div class="order__title">
           {{ item.shopName }}
           <span class="order__status">
-            {{ item.isCanceled ? "已取消" : "已下单" }}
+            {{ item.isCanceled ? "Order canceled" : "Order Placed" }}
           </span>
         </div>
         <div class="order__content">
@@ -91,9 +91,9 @@ export default {
 }
 .title {
   line-height: 0.44rem;
-  background: $bgColor;
+  background: #419e5c;
   font-size: 0.16rem;
-  color: $content-fontcolor;
+  color: #fff;
   text-align: center;
 }
 .order {
@@ -104,6 +104,7 @@ export default {
     margin-bottom: 0.16rem;
     line-height: 0.22rem;
     font-size: 0.16rem;
+
     color: $content-fontcolor;
   }
   &__status {

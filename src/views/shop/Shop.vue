@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="container">
     <div class="search">
       <div class="search__back iconfont" @click="handleBackClick">&#xe6f2;</div>
       <div class="search__content">
@@ -67,7 +67,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../style/variables.scss";
-.wrapper {
+.container {
   padding: 0 0.18rem;
 }
 .search {

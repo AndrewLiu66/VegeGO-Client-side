@@ -60,7 +60,7 @@ export default {
 .title {
   display: flex;
   line-height: 0.44rem;
-  background: $bgColor;
+  background: #419e5c;
   font-size: 0.16rem;
   color: $content-fontcolor;
   text-align: center;
@@ -68,7 +68,7 @@ export default {
     width: 0.2rem;
     margin-left: 0.18rem;
     font-size: 0.2rem;
-    color: #b6b6b6;
+    color: #fff;
   }
   &__text {
     flex: 1;
@@ -76,6 +76,7 @@ export default {
     text-align: center;
   }
   &__add {
+    color: #fff;
     margin-right: 0.2rem;
     font-size: 0.14rem;
   }

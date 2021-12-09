@@ -1,9 +1,6 @@
 <template>
   <div class="wrapper">
-    <img
-      class="wrapper__img"
-      src="http://www.dell-lee.com/imgs/vue3/user.png"
-    />
+    <img class="wrapper__img" src="http://localhost:8080/Images/logo.png" />
     <div class="wrapper__input">
       <input
         class="wrapper__input__content"
@@ -114,8 +111,7 @@ export default {
   &__img {
     display: block;
     margin: 0 auto 0.4rem auto;
-    width: 0.66rem;
-    height: 0.66rem;
+    height: 0.5rem;
   }
   &__input {
     height: 0.48rem;
@@ -140,7 +136,7 @@ export default {
     }
   }
   &__register-button {
-    background: #0091ff;
+    background: #419e5c;
     box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 145, 255, 0.32);
     line-height: 0.48rem;
     border-radius: 0.04rem;

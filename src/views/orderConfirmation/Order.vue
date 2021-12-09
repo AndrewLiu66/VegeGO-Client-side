@@ -52,7 +52,6 @@ const useMakeOrderEffect = (shopId, shopName, productList, address) => {
       const product = productList.value[i];
       products.push({ id: product._id, num: product.count });
     }
-    console.log(address.value._id);
     try {
       const result = await post("/api/order", {
         addressId: address.value._id,
@@ -61,7 +60,6 @@ const useMakeOrderEffect = (shopId, shopName, productList, address) => {
         isCanceled,
         products,
       });
-      console.log(result);
       if (result?.errno === 0) {
         store.commit("clearCartData", shopId);
         router.push({ name: "OrderList" });
@@ -89,7 +87,6 @@ export default {
     const route = useRoute();
     const shopId = route.params.id;
     const address = useAddressEffect();
-    console.log("address", address);
     const { calculations, shopName, productList } = useCommonCartEffect(shopId);
     const { handleConfirmOrder } = useMakeOrderEffect(
       shopId,
@@ -129,7 +126,7 @@ export default {
   }
   &__btn {
     width: 0.98rem;
-    background: #4fb0f9;
+    background: #419e5c;
     color: #fff;
     text-align: center;
     font-size: 0.14rem;

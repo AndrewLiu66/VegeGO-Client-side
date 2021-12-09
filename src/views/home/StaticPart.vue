@@ -13,19 +13,19 @@
     <n-carousel class="n-carousel .n-carousel__dots">
       <img
         class="carousel-img"
-        src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
+        src="http://localhost:8080/Images/carousel/carousel3.jpeg"
       />
       <img
         class="carousel-img"
-        src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
+        src="http://localhost:8080/Images/carousel/carousel2.jpeg"
       />
       <img
         class="carousel-img"
-        src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
+        src="http://localhost:8080/Images/carousel/carousel4.jpeg"
       />
       <img
         class="carousel-img"
-        src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
+        src="http://localhost:8080/Images/carousel/carousel1.jpeg"
       />
     </n-carousel>
   </n-config-provider>

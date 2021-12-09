@@ -2,8 +2,9 @@
   <div class="header">
     <div class="title">VegeGO</div>
     <img src="../../assets/icon/share.png" alt="" class="header__img" />
+    <!-- <img src="http://localhost:8080/Images/logo.png" alt="" class="logo" /> -->
   </div>
-  <div class="wrapper">
+  <div class="container">
     <StaticPart />
     <Nearby />
   </div>
@@ -20,11 +21,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.home {
-  background: #fff;
-}
 .header {
-  background: #558f3a;
+  background: #419e5c;
   height: 0.65rem;
   width: 100%;
   position: fixed;
@@ -35,7 +33,8 @@ export default {
     left: 0.2rem;
     font-size: 0.22rem;
     color: white;
-    letter-spacing: 0.005rem;
+    letter-spacing: 0.008rem;
+    font-weight: bold;
   }
   &__img {
     float: right;
@@ -44,7 +43,7 @@ export default {
     width: 0.3rem;
   }
 }
-.wrapper {
+.container {
   overflow-y: auto;
   position: absolute;
   right: 0;

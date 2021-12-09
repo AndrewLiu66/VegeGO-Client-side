@@ -96,9 +96,9 @@ export default {
   right: 0;
   z-index: 1;
   line-height: 0.44rem;
-  background: $bgColor;
+  background: #419e5c;
   font-size: 0.16rem;
-  color: $content-fontcolor;
+  color: #fff;
   text-align: center;
 }
 .empty {

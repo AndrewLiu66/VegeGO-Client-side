@@ -12,7 +12,7 @@
         <div class="form__item__label">City:</div>
         <input
           class="form__item__content"
-          placeholder="如北京市"
+          placeholder="E.g. Seattle"
           v-model="formData.city"
         />
       </div>
@@ -20,7 +20,7 @@
         <div class="form__item__label">Street address:</div>
         <input
           class="form__item__content"
-          placeholder="如理工大学国防科技园"
+          placeholder="E.g. 4060 9th Ave"
           v-model="formData.department"
         />
       </div>
@@ -28,7 +28,7 @@
         <div class="form__item__label">Unit:</div>
         <input
           class="form__item__content"
-          placeholder="A号楼B层"
+          placeholder="E.g. 888"
           v-model="formData.houseNumber"
         />
       </div>
@@ -36,7 +36,7 @@
         <div class="form__item__label">Name:</div>
         <input
           class="form__item__content"
-          placeholder="请填写收货人的姓名"
+          placeholder="E.g. Andrew"
           v-model="formData.name"
         />
       </div>
@@ -44,7 +44,7 @@
         <div class="form__item__label">Phone number:</div>
         <input
           class="form__item__content"
-          placeholder="请填写收货手机号"
+          placeholder="E.g. 1888888888"
           v-model="formData.phone"
         />
       </div>
@@ -90,7 +90,6 @@ const useFormEffect = (addressId) => {
   const upsertAddress = async () => {
     if (addressId) {
       const result = await patch(`/api/user/address/${addressId}`, formData);
-      console.log(result);
       if (result?.errno === 0) {
         router.back();
       }
@@ -125,6 +124,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../style/variables.scss";
+
 .wrapper {
   overflow-y: auto;
   position: absolute;
@@ -181,7 +181,7 @@ export default {
       outline: none;
       color: #3f3f3f;
       &::placeholder {
-        color: #3f3f3f;
+        color: #959595;
       }
     }
   }

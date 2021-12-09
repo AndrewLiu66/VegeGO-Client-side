@@ -2,7 +2,6 @@
   <div class="shop">
     <!-- <div>{{ item.imgUrl }}</div> -->
     <!-- <img :src="item.imgUrl" class="shop__img" /> -->
-    <!-- <img src="../assets/shopImg/walmart.png" class="shop__img" /> -->
     <img :src="item.imgUrl" class="shop__img" />
     <div
       :class="{

@@ -72,7 +72,8 @@ export default {
 .header {
   position: relative;
   height: 1.5rem;
-  background-image: linear-gradient(239deg, #abd392 0%, #50c7fb 100%);
+  background: #419e5c;
+  // background-image: linear-gradient(239deg, #abd392 0%, #50c7fb 100%);
   padding-top: 0.3rem;
   &__info {
     margin: 0.7rem 0.18rem 0 0.18rem;
@@ -118,7 +119,7 @@ export default {
       margin-right: 0.12rem;
       width: 0.22rem;
       height: 0.22rem;
-      background: #32c5ff;
+      background: #419e5c;
       border-radius: 0.08rem;
       text-align: center;
       font-weight: bold;
@@ -138,7 +139,7 @@ export default {
 .logout {
   margin: 0.18rem;
   line-height: 0.32rem;
-  background: $btn-bgColor;
+  background: #419e5c;
   color: $bgColor;
   text-align: center;
   border-radius: 0.04rem;

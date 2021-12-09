@@ -1,9 +1,6 @@
 <template>
   <div class="wrapper">
-    <img
-      class="wrapper__img"
-      src="http://www.dell-lee.com/imgs/vue3/user.png"
-    />
+    <img class="wrapper__img" src="http://localhost:8080/Images/logo.png" />
     <div class="wrapper__input">
       <input
         class="wrapper__input__content"
@@ -109,12 +106,11 @@ export default {
   &__img {
     display: block;
     margin: 0 auto 0.4rem auto;
-    width: 0.66rem;
-    height: 0.66rem;
+    height: 0.5rem;
   }
   &__input {
-    height: 0.48rem;
-    margin: 0 0.4rem 0.16rem 0.4rem;
+    height: 0.45rem;
+    margin: 0 0.5rem 0.16rem 0.5rem;
     padding: 0 0.16rem;
     background: #f9f9f9;
     border: 0.01rem solid rgba(0, 0, 0, 0.1);
@@ -135,14 +131,14 @@ export default {
     }
   }
   &__login-button {
-    background: #0091ff;
+    background: #419e5c;
     box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 145, 255, 0.32);
     line-height: 0.48rem;
     border-radius: 0.04rem;
     border-radius: 0.04rem;
     color: #fff;
     font-size: 0.16rem;
-    margin: 0.32rem 0.4rem 0.16rem 0.4rem;
+    margin: 0.32rem 0.5rem 0.16rem 0.5rem;
     text-align: center;
   }
   &__login-link {
