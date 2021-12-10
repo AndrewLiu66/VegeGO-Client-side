@@ -1,4 +1,4 @@
-*This website is designed for **mobile size viewport**, please either browse on you mobile phone or change your website viewport (by right clicking your mouse - click on "Inspect" - click on the mobile phone icon)*
+*This website is designed for **mobile size viewport**, please either browse on you mobile phone or change your website viewport for best using experience (by right clicking your mouse - click on "Inspect" - click on the mobile phone icon)*
 
 # VegeGO (still being updated)
 
