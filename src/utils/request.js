@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://vegego-client.herokuapp.com/',
     withCredentials: true, // 允许跨域传递cookie
     timeout: 10000
 })
