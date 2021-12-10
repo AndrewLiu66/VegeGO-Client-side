@@ -12,6 +12,7 @@ testing password: **123**
 This repository contains the client-side codes for my project VegeGO, an App that allows you to login as a customer, and purchase items from the nearby stores. Some of the features are still being updated, but still, feel free to try it out!
 
 ## Project Setup
+download all dependencies
 ```
 npm install
 ```
