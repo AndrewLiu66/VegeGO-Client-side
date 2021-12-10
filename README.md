@@ -9,14 +9,13 @@ testing password: **123**
 
 ## Project Intro
 
-This is the client side repository for my project VegeGO, an App that allows you to login as a customer, and purchase items from the nearby stores. Some of the features are not functional yet, but feel free to click into a store, add some items into the cart, and complete the order!
-
+This is the client side repository for my project VegeGO, an App that allows you to login as a customer, and purchase items from the nearby stores. Some of the features are not functional yet, but still, feel free to try it out!
 
 ## Project setup
 ```
 npm install
 ```
-
+*note: in order to make the project work, you also need to download my another repository "VegeGo-server", which is the back-end code for this web App*
 ## Run project
 ```
 npm run serve
