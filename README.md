@@ -1,7 +1,13 @@
 # VegeGO (still in updation)
 
-####testing account: andrew 
-####testing password: 123
+testing account: 
+```
+andrew 
+```
+testing password:
+```
+123
+```
 
 https://stormy-badlands-71711.herokuapp.com/
 
