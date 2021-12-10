@@ -1,4 +1,4 @@
-# VegeGO (still in updation)
+# VegeGO (still being updated)
 
 Project URL: https://stormy-badlands-71711.herokuapp.com/
 
@@ -17,7 +17,7 @@ The web only serves well in mobile size screen, please change your browser viewp
 npm install
 ```
 
-## Compiles and hot-reloads for development
+## Run project
 ```
 npm run serve
 ```
