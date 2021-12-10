@@ -1,4 +1,10 @@
-# VegeGO
+# VegeGO (still in updation)
+
+testing account: andrew 
+testing password: 123
+
+https://stormy-badlands-71711.herokuapp.com/
+
 
 This is my personal project that's built mainly with the web framework Vue.js. It mocks a grocery store that sells fruits.
 Users are able to pick a store, add items into store, and place orders.
