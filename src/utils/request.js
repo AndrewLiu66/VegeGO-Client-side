@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'https://vegego-server.herokuapp.com/',
+    baseURL: 'https://intense-stream-99805.herokuapp.com/',
     withCredentials: true, // 允许跨域传递cookie
     timeout: 10000
 })
